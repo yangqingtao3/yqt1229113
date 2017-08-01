@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 340px;
+				height: 350px;
+				background-image: url(img/login.png);
+				margin: 50px auto;
+				position: relative;
+			}
+			
+			.box * {
+				position: absolute;
+				border: none;
+				outline: none;
+				background-color: rgba(0,0,0,0);
+			}
+			
+			#user{
+				width:257px;
+				height: 38px;
+				top:76px;
+				left:62px;
+			}
+			#pwd{
+				width:257px;
+				height: 38px;
+				top:140px;
+				left: 62px;
+			}
+			#btn{
+				width: 300px;
+				height: 42px;
+				left: 20px;
+				top: 236px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box">
+			<input type="text" name="user" id="user" value="" />
+			<input type="password" name="pwd" id="pwd" value="" />
+
+			<input type="button" id="btn" value="" onclick="login();" />
+		</div>
+
+		<script type="text/javascript">
+			function login() {
+				// 1.获取用户名与密码
+				var userInput = document.getElementById("user");
+				var pwdInput = document.getElementById("pwd");
+				var loginBtn = document.getElementById("btn");
+				
+				if(userInput.value==""||pwdInput.value==""){
+					alert("请确保不为空！");
+					return;
+				}
+				
+				// 2.判断是否正确 ，假设 ：admin admin
+				if(userInput.value == "admin" && pwdInput.value =="admin"){
+					alert("登录成功！");
+					location.assign("http://www.baidu.com");
+				}else{
+					alert("登录失败！");
+				}
+			}
+		</script>
+	</body>
+
+</html>
